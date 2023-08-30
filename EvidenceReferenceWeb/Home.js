@@ -140,7 +140,7 @@ app.controller('ExhibitsCtrl', function ($scope, $mdToast, $log, $http, $mdDialo
         var adddialog;
         $scope.AddExhibitDialog = function () {
             //  var URL = 'https://localhost:44326/AddExhibit.html';
-            var URL = '/EvidenceReference/EvidenceReferenceWeb/AddExhibit.html';
+            var URL = 'https://aamirhusnain.github.io/EvidenceReference/EvidenceReferenceWeb/AddExhibit.html';
             Office.context.ui.displayDialogAsync(URL, { height: 60, width: 35 },
                 function (asyncResult) {
                     adddialog = asyncResult.value;
@@ -352,7 +352,7 @@ app.controller('ExhibitsCtrl', function ($scope, $mdToast, $log, $http, $mdDialo
         function OpenEditDialog() {
 
             //  var URL = 'https://localhost:44326/AddExhibit.html';
-            var URL = '/EvidenceReference/EvidenceReferenceWeb/EditExhibit.html';
+            var URL = 'https://aamirhusnain.github.io/EvidenceReference/EvidenceReferenceWeb/EditExhibit.html';
 
             Office.context.ui.displayDialogAsync(URL, { height: 65, width: 35 },
                 function (asyncResult) {
