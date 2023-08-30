@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ExhibitsAPIModelStoreContainer" CdmEntityContainer="ExhibitsAPIEntities">
+    <EntitySetMapping Name="ExhibitTBs">
+      <EntityTypeMapping TypeName="ExhibitsAPIModel.ExhibitTB">
+        <MappingFragment StoreEntitySet="ExhibitTB">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="ExhibitId" ColumnName="ExhibitId" />
+          <ScalarProperty Name="Lead" ColumnName="Lead" />
+          <ScalarProperty Name="ExhibitText" ColumnName="ExhibitText" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="link" ColumnName="link" />
+          <ScalarProperty Name="DocumentId" ColumnName="DocumentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

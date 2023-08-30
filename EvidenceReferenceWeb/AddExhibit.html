@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <script src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js" type="text/javascript"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-----------angular js------------->
+
+    <link rel="stylesheet"
+          href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.6/angular-messages.min.js"></script>
+    <!--Angular Material Library-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.12/angular-material.min.js"></script>
+
+
+</head>
+<body ng-app="AddExhibitsApp" ng-controller="AddExhibitsCtrl">
+    <div style="margin-left:4%">
+        <div>
+            <p style="text-align:center;font-weight:bold;">Add Exhibit</p>
+        </div>
+        <div>
+            <label>Lead In Text</label>
+            <input type="text" style="width:95%;" ng-model="AddLead" />
+        </div>
+        <br />
+        <br />
+        <div>
+            <label>Exhibtit Text</label>
+            <input type="text" style="width:95%;" ng-model="AddExhibit" />
+        </div>
+        <br />
+        <br />
+        <div>
+            <label>Description Text</label>
+            <input type="text" style="width:95%;" ng-model="AddDescription" />
+        </div>
+        <br />
+
+        <p style="text-align:center;font-weight:bold;">Link or Brwse</p>
+
+        <div>
+            <label>Link or Browse for Exhibit</label>
+            <input type="text" style="width:95%;" ng-model="AddLink" />
+        </div>
+        <div class="md-padding" style="margin-left:60%;">
+            <button ng-click="selectImage()" style="font-size: 14px;">Browse</button>
+            <button ng-click="previewImage()" style="font-size: 14px;">Preview</button>
+        </div>
+        <br />
+        <div>
+            <button style="position:absolute;right:5%;" id="close">Done</button>
+        </div>
+
+    </div>
+    <br />
+    <br />
+    <br />
+    <div>
+        <input type="file" id="fileInput" style="display: none;" accept="image/*" />
+        <div class="md-padding">
+            <img ng-src="{{ selectedImageUrl }}" alt="Selected Image" style="width:100%;" ng-model="Image" ng-show="ShowImage" />
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('AddExhibitsApp', ['ngMaterial'], function () { });
+
+  app.controller('AddExhibitsCtrl', function ($scope, $mdToast, $log) {
+
+
+    $scope.selectImage = function () {
+        document.getElementById('fileInput').click();
+        $scope.ShowImage = false;
+    };
+
+    $scope.handleFileSelect = function (event) {
+        var selectedFile = event.target.files[0];
+        if (selectedFile) {
+            var reader = new FileReader();
+            reader.onload = function (event) {
+                $scope.$apply(function () {
+                    $scope.AddLink = event.target.result;
+                    $scope.selectedImageFile = selectedFile;
+                });
+            };
+            reader.readAsDataURL(selectedFile);
+        }
+    };
+
+    $scope.previewImage = function () {
+        if ($scope.AddLink) {
+            $scope.ShowImage = true;
+            // Use ImageUrl to display the image
+            $scope.selectedImageUrl = $scope.AddLink;
+        }
+    };
+
+    document.getElementById('fileInput').addEventListener('change', $scope.handleFileSelect);
+
+
+            //<-----------------------add Dilog js Start----------------------->//
+
+            Office.initialize = function () { };
+            $(document).ready(function () {
+
+                $("#close").click(function () {
+
+                    var data = {
+                        Lead: $scope.AddLead,
+                        Exhibit: $scope.AddExhibit,
+                        Description: $scope.AddDescription,
+                        Link: $scope.AddLink
+                    };
+
+                    var jsondata = JSON.stringify(data)
+                    Office.context.ui.messageParent(jsondata);
+                });
+            });
+        });
+
+    </script>
+
+    <!------------------>
+    <!--script src="Home.js"></script---->
+    <!------------------>
+
+</body>
+</html>
+
+
+
+
+<style>
+    body, html {
+        height: auto;
+        position: relative;
+    }
+</style>

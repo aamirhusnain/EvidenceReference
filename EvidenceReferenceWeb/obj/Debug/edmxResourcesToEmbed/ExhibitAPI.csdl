@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="ExhibitsAPIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ExhibitTB">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Guid" Nullable="false" />
+    <Property Name="ExhibitId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Lead" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ExhibitText" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="DocumentId" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ExhibitsAPIEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ExhibitTBs" EntityType="Self.ExhibitTB" />
+  </EntityContainer>
+</Schema>
