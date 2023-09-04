@@ -858,7 +858,7 @@ app.controller('ExhibitsCtrl', function ($scope, $mdToast, $log, $http, $mdDialo
             }
             console.log(newArray);
 
-            fetch(''https://aamirhusnain.github.io/EvidenceReference/EvidenceReferenceWeb/Controllers/PDFTesting/ConvertToPdf', {
+            fetch('https://aamirhusnain.github.io/EvidenceReference/EvidenceReferenceWeb/Controllers/PDFTesting/ConvertToPdf', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
