@@ -769,7 +769,7 @@ app.controller('ExhibitsCtrl', function ($scope, $mdToast, $log, $http, $mdDialo
         };
 
         //function convertToPdfUsingAjax(base64Data,) {
-        //    fetch('https://aamirhusnain.github.io/EvidenceReference/EvidenceReferenceWeb/Controllers/ConvertToPDF/ConvertToPdf', {
+        //    fetch('https://aamirhusnain.github.io/EvidenceReference/EvidenceReferenceWeb/Controllers/PDFTesting/ConvertToPdf', {
         //        method: 'POST',
         //        headers: {
         //            'Content-Type': 'application/json',
