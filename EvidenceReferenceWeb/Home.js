@@ -171,7 +171,7 @@ app.controller('ExhibitsCtrl', function ($scope, $mdToast, $log, $http, $mdDialo
 
         var adddialog;
         function AddExhibitDialog () {
-            Office.context.ui.displayDialogAsync('https://localhost:44326/AddExhibit.html', { height: 60, width: 35 },
+            Office.context.ui.displayDialogAsync('https://aamirhusnain.github.io/EvidenceReference/EvidenceReferenceWeb/AddExhibit.html', { height: 60, width: 35 },
                 function (asyncResult) {
                     adddialog = asyncResult.value;
                     adddialog.addEventHandler(Office.EventType.DialogMessageReceived, addprocessMessage);
@@ -411,7 +411,7 @@ app.controller('ExhibitsCtrl', function ($scope, $mdToast, $log, $http, $mdDialo
 
         var dialog;
         function OpenEditDialog() {
-            Office.context.ui.displayDialogAsync('https://localhost:44326/EditExhibit.html', { height: 65, width: 35 },
+            Office.context.ui.displayDialogAsync('https://aamirhusnain.github.io/EvidenceReference/EvidenceReferenceWeb/EditExhibit.html', { height: 65, width: 35 },
                 function (asyncResult) {
                     dialog = asyncResult.value;
                     dialog.addEventHandler(Office.EventType.DialogMessageReceived, processMessage);
