@@ -1,0 +1,35 @@
+﻿<md-dialog aria-label="Exhibit" style="width: 100%;">
+    <form ng-cloak>
+        <md-toolbar style="background-color:black;height: 20px;">
+            <div>
+                <p style="text-align:center;color:white;">Confirm</p>
+            </div>
+        </md-toolbar>
+        <md-dialog-content>
+            <div class="md-dialog-content">
+
+                <md-input-container class="md-block">
+                    <label>Affiant Name</label>
+                    <input type="text" ng-model="Affiant">
+                </md-input-container>
+                <md-input-container class="md-block">
+                    <label>Commissioner Name</label>
+                    <input type="text" ng-model="Commissioner">
+                </md-input-container>
+                <!--------------------->
+
+                <md-datepicker ng-model="Date" md-placeholder="Enter date"
+                               input-aria-describedby="datepicker-description"
+                               input-aria-labelledby="datepicker-header "></md-datepicker>
+
+            </div>
+           
+        </md-dialog-content>
+
+        <md-dialog-actions layout="row" layout-align="center" style="padding-bottom: 15px;">
+            <md-button ng-disabled="!Affiant || !Commissioner ||!Date" ng-click="confirm()" style="background-color:black;color:white;text-transform:capitalize;width: 50%;">
+                Confirm
+            </md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>
