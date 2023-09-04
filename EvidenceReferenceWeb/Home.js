@@ -679,7 +679,7 @@ app.controller('ExhibitsCtrl', function ($scope, $mdToast, $log, $http, $mdDialo
         function openDialogClick(ev) {
             $mdDialog.show({
                 scope: $scope.$new(),
-                templateUrl: '/ConfirmDialog.html',
+                templateUrl: 'https://aamirhusnain.github.io/EvidenceReference/EvidenceReferenceWeb/ConfirmDialog.html',
                 clickOutsideToClose: true,
                 targetEvent: ev,
                 fullscreen: $scope.customFullscreen,
@@ -769,7 +769,7 @@ app.controller('ExhibitsCtrl', function ($scope, $mdToast, $log, $http, $mdDialo
         };
 
         //function convertToPdfUsingAjax(base64Data,) {
-        //    fetch('/ConvertToPDF/ConvertToPdf', {
+        //    fetch('https://aamirhusnain.github.io/EvidenceReference/EvidenceReferenceWeb/Controllers/ConvertToPDF/ConvertToPdf', {
         //        method: 'POST',
         //        headers: {
         //            'Content-Type': 'application/json',
